@@ -15,6 +15,13 @@ Usando:
 > - Rails 5.0.2
 
 
+Utilidades
+------------
+
+> - rake db:seed
+> - bundle exec rspec spec
+
+
 
 
 Contribuidores

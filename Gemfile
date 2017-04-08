@@ -20,7 +20,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem "better_errors"
-
+  gem "binding_of_caller"
 end
 
 group :development do

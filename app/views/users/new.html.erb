@@ -1,6 +1,12 @@
 <h1>Registration</h1>
 
 <%= form_for @user do |f| %>
+  <%= f.hidden_field :role, value: 1 %>
+  <div class="form-group">
+    <%= f.label :document %>
+    <%= f.text_field :document, class: 'form-control', required: true %>
+  </div>
+
   <div class="form-group">
     <%= f.label :first_name %>
     <%= f.text_field :first_name, class: 'form-control', required: true %>

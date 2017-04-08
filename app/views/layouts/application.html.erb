@@ -9,6 +9,27 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
+    <% if current_user %>
+      <ul>
+          <li>Welcome</li>
+        <% else %>
+          <li><%= link_to 'Sign Up', sign_up_path %></li>
+          <li><%= link_to 'Log In', log_in_path %></li>
+        <% end %>
+      </ul>
+      <% if current_user %>
+        <ul class="nav navbar-nav pull-right">
+          <li><span><%= current_user.full_name %></span></li>
+          <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+        </ul>
+      <% end %>
+
     <%= yield %>
   </body>
 </html>

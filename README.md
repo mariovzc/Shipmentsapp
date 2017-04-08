@@ -1,24 +1,23 @@
-# README
+Shipments_app
+===================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Aplicación para la gestión de envíos de paquetes
+----------
 
-* Ruby version
 
-* System dependencies
+#### <i class="icon-file"></i> Información
 
-* Configuration
+Usando:
 
-* Database creation
 
-* Database initialization
+> - ruby 2.3.1p112
+> - Rails 5.0.2
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+Contribuidores
+-------------
+
+> - Mario Vizcaino

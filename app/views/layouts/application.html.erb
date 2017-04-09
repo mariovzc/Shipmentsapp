@@ -5,31 +5,25 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
-        <%= value %>
-      </div>
-    <% end %>
-
-    <% if current_user %>
-      <ul>
-          <li>Welcome</li>
-        <% else %>
-          <li><%= link_to 'Sign Up', sign_up_path %></li>
-          <li><%= link_to 'Log In', log_in_path %></li>
-        <% end %>
-      </ul>
-      <% if current_user %>
-        <ul class="nav navbar-nav pull-right">
-          <li><span><%= current_user.full_name %></span></li>
-          <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
-        </ul>
+    <%= render 'layouts/menu'%>
+    <div class="container-fluid">
+      <%= yield %>      
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            <%= value %>
+        </div>
       <% end %>
+    </div>
 
-    <%= yield %>
   </body>
 </html>

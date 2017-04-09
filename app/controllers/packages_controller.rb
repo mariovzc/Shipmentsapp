@@ -3,6 +3,7 @@ class PackagesController < ApplicationController
 
   def index
       @packages = Package.all
+      render json: @packages
   end
 
   def show
@@ -10,11 +11,14 @@ class PackagesController < ApplicationController
 
   def new
     @package = Package.new
+    @cities = City.all
   end
 
-  def edit
+  def edit    
   end
   def create
+    #{"email"=>"c@c.com", "password"=>"123", "password_confirmation"=>"123", "first_name"=>"asda", "last_name"=>"asd", "role"=>"1"}
+    asdasd
     @package = Package.new(package_params)
 
     respond_to do |format|
@@ -25,29 +29,21 @@ class PackagesController < ApplicationController
         format.html { render :new }
         format.json { render json: :packages.errors, status: :unprocessable_entity }
       end
-    end
+    end   
   end
 
   def update
-    respond_to do |format|
       if @package.update(package_params)
-        format.html { redirect_to :packages, notice: 'paquete Actualizado Correctamente' }
-        format.json { render :show, status: :ok, location: @package }
+        render json: @package, status: :created
       else
-        format.html { render :edit }
-        format.json { render json: @package.errors, status: :unprocessable_entity }
+        render json: @package.errors, status: :unprocessable_entity
       end
-    end
   end
 
   def destroy    
     @package = Package.find(params[:id])
     @package.destroy
-    respond_to do |format|
-      format.html { redirect_to :packages }
-      format.json { head :no_content }
-      format.js   { render :layout => false }
-    end
+    render json: "ok".to_json, status: 202
   end
 
     private

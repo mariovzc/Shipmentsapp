@@ -1,2 +1,9 @@
-<h1>Packages#new</h1>
-<p>Find me in app/views/packages/new.html.erb</p>
+<h3 class="center-align">Nuevo Envio</h3>
+<div class="row">
+    <%= form_for @package, :html => {:class => 'col s12'} do |f| %>
+        <%= render 'form', f: f %>
+        <div class="center-align">
+            <%= f.submit 'Guardar', class: 'waves-effect waves-light btn' %>
+        </div>
+    <% end %>
+</div>

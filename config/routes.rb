@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   resources :fleets
   #get 'fleets/filderByCity/:id' => 'fleets#fleets_by_city', as: 'fleets_filter_by_city'
 
+  resources :bus
 
 end

@@ -1,8 +1,10 @@
 class BusController < ApplicationController
+  respond_to :json
   before_action :set_bus, only: [:show, :edit, :update, :destroy]
 
   def index
       @buss = Bus.all
+      render json: @buss
   end
 
   def show
@@ -16,38 +18,25 @@ class BusController < ApplicationController
   end
   def create
     @bus = Bus.new(bus_params)
-
-    respond_to do |format|
       if @bus.save
-        format.html { redirect_to :buss, flash[:success] = 'Bus creado'  }
-        format.json { render :show, status: :created, location: @bus }
+        render json: @bus, status: :created
       else
-        format.html { render :new }
-        format.json { render json: :buss.errors, status: :unprocessable_entity }
+        render json: @bus.errors, status: :unprocessable_entity
       end
-    end
   end
 
   def update
-    respond_to do |format|
-      if @bus.update(bus_params)
-        format.html { redirect_to :buss, notice: 'Buse Actualizado Correctamente' }
-        format.json { render :show, status: :ok, location: @bus }
-      else
-        format.html { render :edit }
-        format.json { render json: @bus.errors, status: :unprocessable_entity }
-      end
+    if @bus.update(bus_params)
+      render json: @bus, status: :created
+    else
+      render json: @bus.errors, status: :unprocessable_entity
     end
   end
 
   def destroy    
     @bus = Bus.find(params[:id])
     @bus.destroy
-    respond_to do |format|
-      format.html { redirect_to :buss }
-      format.json { head :no_content }
-      format.js   { render :layout => false }
-    end
+    render json: "ok".to_json, status: 202
   end
 
     private

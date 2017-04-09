@@ -13,4 +13,7 @@ class Package < ApplicationRecord
   def destination
     City.find(self.destination_id)    
   end
+  def current_location
+    "hello moto"
+  end
 end

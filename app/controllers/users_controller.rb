@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     @user = User.where(document: params[:id])[0]
     render json: @user
   end
+  def destroy    
+    @user = User.find(params[:id])
+    @user.destroy
+    render json: "ok".to_json, status: 202
+  end
 
   private
 

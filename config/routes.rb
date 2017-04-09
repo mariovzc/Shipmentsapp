@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :destroy]
   get 'user/document/:id' => 'users#user_by_document', as: 'user_by_document'
   get '/sign_up', to: 'users#new', as: :sign_up
 

@@ -53,7 +53,31 @@
             </tbody>
         </table>
     </div>
-    <div id="test3" class="col s12">Test 3</div>
+    <div id="test3" class="col s12">
+        <table class="highlight centered">
+            <thead>
+            <tr>
+                <th>TrackingID</th>
+                <th>Estado</th>
+                <th>Lugar Actual</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @packages.each do |package| %>
+                <tr>
+                    <td><%= package.trackingid %></td>
+                    <td><%= package.order_status.name %></td>
+                    <td><%= package.current_location %></td>
+                    <td>
+                        <a id="delete_users_<%=package.id%>" class="btn-floating blue "><i class="material-icons">border_color</i>
+                    </td>
+                </tr>
+            <% end %>            
+            </tbody>
+        </table>
+    </div>
     <div id="test4" class="col s12">
         <table class="highlight centered">
             <thead>
@@ -71,7 +95,7 @@
                     <td><%=user.role == 1 ? "Admin" : "Cliente"  %></td>
                     <td>
                         <% if current_user != user %>
-                            <a id="delete_user_<%=user.id%>" class="btn-floating blue delete-button"><i class="material-icons">delete</i>
+                            <a id="delete_users_<%=user.id%>" class="btn-floating blue delete-button"><i class="material-icons">delete</i>
                         <% end %>
                     </td>
                 </tr>

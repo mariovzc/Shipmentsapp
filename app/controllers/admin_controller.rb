@@ -4,5 +4,6 @@ class AdminController < ApplicationController
     @fleets = Fleet.all
     @buss = Bus.all
     @users = User.all
+    @packages = Package.all
   end
 end

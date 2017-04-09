@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">APP</a>
+    <%=link_to 'APP', root_path, class: 'brand-logo'%>
     <ul id="nav-mobile" class="right ">
      <% if current_user %>
       <li><%= link_to 'Log Out', log_out_path, method: :delete, class: 'nav-link' %></li>

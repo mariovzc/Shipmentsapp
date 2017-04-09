@@ -6,7 +6,7 @@ $(document).ready(function(){
               $("#first_name").val(data.first_name).addClass('valid');
               $("#last_name").val(data.last_name).addClass('valid');
               $(".package-label").addClass('active');
-              $("#created").val(1);
+              $("#created").val(data.id);
           }else{
               $("#first_name").val("").removeClass('valid');
               $("#last_name").val("").removeClass('valid');

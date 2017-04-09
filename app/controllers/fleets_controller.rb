@@ -1,9 +1,9 @@
 class FleetsController < ApplicationController
-    before_action :set_fleet, only: [:show, :edit, :update, :destroy]
+  before_action :set_fleet, only: [:show, :edit, :update, :destroy]
 
-def index
-    @fleets = Fleet.all
-end
+  def index
+      @fleets = Fleet.all
+  end
 
   def show
   end

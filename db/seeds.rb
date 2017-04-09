@@ -8,5 +8,11 @@ City.create(code: 76364, name: "JAMUNDI")
 City.create(code: "08001".to_i, name: "BARRANQUILLA")
 City.create(code: "08078".to_i, name: "BARANOA")
 City.create(code: "08560".to_i, name: "PONEDERA")
+p "El seed de ciudades termino"
 
-p "El seed termiado :-("
+p "seed de estados!!!!!!"
+Order_status.create(name:"En Bodega")
+Order_status.create(name:"En Transporte")
+Order_status.create(name:"Entregado")
+p "seed de estados terminado"
+p "El seed a termiado"

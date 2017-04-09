@@ -20,7 +20,7 @@ Utilidades
 
 > - rake db:seed
 > - bundle exec rspec spec
-
+> - rake diagram:all_with_engines
 
 
 

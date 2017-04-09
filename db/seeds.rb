@@ -11,8 +11,8 @@ City.create(code: "08560".to_i, name: "PONEDERA")
 p "El seed de ciudades termino"
 
 p "seed de estados!!!!!!"
-Order_status.create(name:"En Bodega")
-Order_status.create(name:"En Transporte")
-Order_status.create(name:"Entregado")
+OrderStatus.create(name:"En Bodega")
+OrderStatus.create(name:"En Transporte")
+OrderStatus.create(name:"Entregado")
 p "seed de estados terminado"
 p "El seed a termiado"

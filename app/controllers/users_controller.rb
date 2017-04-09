@@ -14,6 +14,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  def user_by_document
+    @user = User.where(document: params[:id])[0]
+    render json: @user
+  end
 
   private
 

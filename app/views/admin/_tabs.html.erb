@@ -35,7 +35,7 @@
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Ciudad</th>
+                <th>Flota</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -54,6 +54,30 @@
         </table>
     </div>
     <div id="test3" class="col s12">Test 3</div>
-    <div id="test4" class="col s12">Test 5</div>
+    <div id="test4" class="col s12">
+        <table class="highlight centered">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Flota</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.full_name%></td>
+                    <td><%=user.role == 1 ? "Admin" : "Cliente"  %></td>
+                    <td>
+                        <% if current_user != user %>
+                            <a id="delete_user_<%=user.id%>" class="btn-floating blue delete-button"><i class="material-icons">delete</i>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>            
+            </tbody>
+        </table>
+    </div>
 
 </div>

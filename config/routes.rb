@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/index'
-
-  get 'session/index'
-
-  get 'users/new'
-
   get 'home/index'
   root 'home#index'
 
@@ -20,4 +14,5 @@ Rails.application.routes.draw do
 
   resources :bus
 
+  resources :packages
 end

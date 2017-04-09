@@ -1,6 +1,10 @@
 class Package < ApplicationRecord
   attr_accessor :raw_address
 
+
+  default_scope { order(created_at: :desc) }
+
+
   belongs_to :user
   belongs_to :order_status
   belongs_to :bus
@@ -30,7 +34,7 @@ class Package < ApplicationRecord
   def destination
     City.find(self.destination_id)    
   end
-  def current_location
-    "hello moto"
+  def entry_date
+    self.created_at.strftime("%m/%d/%Y") 
   end
 end

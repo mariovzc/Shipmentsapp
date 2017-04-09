@@ -60,6 +60,7 @@
                 <th>TrackingID</th>
                 <th>Estado</th>
                 <th>Lugar Actual</th>
+                <th>Día de ingreso</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -69,7 +70,8 @@
                 <tr>
                     <td><%= package.trackingid %></td>
                     <td><%= package.order_status.name %></td>
-                    <td><%= package.current_location %></td>
+                    <td><%= package.address.nil? ? 'Sin Asignar' : package.address %></td>
+                    <td><%= package.entry_date %></td>
                     <td>
                         <%= link_to '<i class= "material-icons">explore</i>'.html_safe, (package),class: 'btn-floating blue' %>
                     </td>

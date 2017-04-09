@@ -7,6 +7,7 @@ class PackagesController < ApplicationController
   end
 
   def show
+    @order_statuss = OrderStatus.all
   end
 
   def new

@@ -22,7 +22,8 @@ $(document).ready(function(){
     var formData = JSON.parse(JSON.stringify(jQuery(this).serializeArray())); 
     var data = {
       "package":{
-        "raw_address" : formData[0].value
+        "raw_address" : formData[0].value,
+        "order_status_id": formData[1].value
       }
     };
     $.ajax({

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 4) do
+ActiveRecord::Schema.define(version: 5) do
+
+  create_table "buses", force: :cascade do |t|
+    t.string   "license_plate"
+    t.integer  "fleet_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["fleet_id"], name: "index_buses_on_fleet_id"
+  end
 
   create_table "cities", primary_key: "code", force: :cascade do |t|
     t.string   "name"

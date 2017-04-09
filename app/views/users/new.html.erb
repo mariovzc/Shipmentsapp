@@ -1,32 +1,38 @@
-<h1>Registration</h1>
+<h3 class="center-align">Registro</h3>
 
-<%= form_for @user do |f| %>
-  <%= f.hidden_field :role, value: 1 %>
-  <div class="form-group">
-    <%= f.label :document %>
-    <%= f.text_field :document, class: 'form-control', required: true %>
-  </div>
+<div class="row">
+  <%= form_for @user, :html => {:class => 'col s12'} do |f| %>
+    <%= f.hidden_field :role, value: 1 %>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+            <%= f.text_field :first_name, class: 'form-control', required: true, class: "validate" %>
+            <%= f.label :first_name %>
 
-  <div class="form-group">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, class: 'form-control', required: true %>
+        </div>
+        <div class="input-field col s6">
+          <%= f.text_field :last_name, class: 'form-control', required: true, class: "validate" %>
+          <%= f.label :last_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.email_field :email, class: 'form-control', required: true, class: "validate" %>
+          <%= f.label :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control', required: true %>
+        </div>
+        <div class="input-field col s6">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
+        </div>
+      </div>      
+      <div class="center-align">
+        <%= f.submit 'Register', class: 'waves-effect waves-light btn' %>
+      </div>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: 'form-control', required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control', required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control', required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
-  </div>
-  <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
-<% end %>

@@ -6,5 +6,11 @@ class Package < ApplicationRecord
   #belongs_to :destination_id, class_name: 'City', foreign_key: 'destination_id'
 
   validates :trackingid, presence: true
-
+  
+  def origin
+    City.find(self.origin_id)
+  end
+  def destination
+    City.find(self.destination_id)    
+  end
 end

@@ -1,0 +1,21 @@
+<div class="row">
+    <h3 class="header center-align">Horizontal Card</h3>
+    <% @packages.each do |package| %>
+        <div class="card col s3">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="http://materializecss.com/images/office.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Mas Informacion<i class="material-icons right">more_vert</i></span>
+                <p><a href="javascript:void(0);"><%= package.order_status.name %></a> - Token: <%= package.trackingid%> </p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Informacion del paquete:<i class="material-icons right">close</i></span>
+                <p>Origen: <%=package.origin.name%></p>
+                <p>Destino: <%=package.destination.name%></p>
+                <p>Enviado por: <%= package.user.full_name%></p>
+                <p>Contenido: <%= package.description %></p>
+            </div>
+        </div>
+    <% end %>
+</div>

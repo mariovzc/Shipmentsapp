@@ -17,6 +17,7 @@ $( document ).ready(function() {
         success: function(data){
             alert("Flota Creada");
             $("#create_fleets").trigger("reset");
+            location.reload();
         },
         failure: function(errMsg) {
             alert(errMsg);

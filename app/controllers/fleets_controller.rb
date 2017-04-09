@@ -1,8 +1,9 @@
 class FleetsController < ApplicationController
+  respond_to :json
   before_action :set_fleet, only: [:show, :edit, :update, :destroy]
-
   def index
       @fleets = Fleet.all
+      render json: @fleets, status: :created   
   end
 
   def show
@@ -22,15 +23,10 @@ class FleetsController < ApplicationController
 
   def create
     @fleet = Fleet.new(fleet_params)
-
-    respond_to do |format|
-      if @fleet.save
-        format.html { redirect_to :fleets, flash[:success] = 'Flota Creada' }
-        format.json { render :show, status: :created, location: @fleet }
-      else
-        format.html { render :new }
-        format.json { render json: :fleets.errors, status: :unprocessable_entity }
-      end
+    if @fleet.save
+      render json: @fleet, status: :created
+    else
+      render json: @fleet.errors, status: :unprocessable_entity
     end
   end
 

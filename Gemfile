@@ -21,6 +21,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'railroady'
 end
 
 group :development do

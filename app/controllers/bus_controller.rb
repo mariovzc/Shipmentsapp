@@ -27,7 +27,7 @@ class BusController < ApplicationController
 
   def update
     if @bus.update(bus_params)
-      render json: @bus, status: :created
+      render json: @bus, status: :update
     else
       render json: @bus.errors, status: :unprocessable_entity
     end

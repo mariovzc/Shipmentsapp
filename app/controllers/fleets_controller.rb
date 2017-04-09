@@ -16,10 +16,10 @@ class FleetsController < ApplicationController
   def edit
   end
 
-  #def fleets_by_city
-      #@fleet = Fleet.where(city_id: params[:id])
-      #render json: 1, status: :ok
-  #end
+  def fleets_by_city
+      @fleet = Fleet.where(city_id: params[:id])
+      render json: @fleet, status: :ok
+  end
 
   def create
     @fleet = Fleet.new(fleet_params)
@@ -31,25 +31,17 @@ class FleetsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @fleet.update(fleet_params)
-        format.html { redirect_to :fleets, notice: 'Fleete Actualizado Correctamente' }
-        format.json { render :show, status: :ok, location: @fleet }
+     if @fleet.update(fleet_params)
+        render json: @fleet, status: :update
       else
-        format.html { render :edit }
-        format.json { render json: @fleet.errors, status: :unprocessable_entity }
-      end
-    end
+        render json: @fleet.errors, status: :unprocessable_entity
+     end
   end
 
   def destroy    
     @fleet = Fleet.find(params[:id])
     @fleet.destroy
-    respond_to do |format|
-      format.html { redirect_to :fleets }
-      format.json { head :no_content }
-      format.js   { render :layout => false }
-    end
+    render json: "ok".to_json, status: 202  
   end
 
     private

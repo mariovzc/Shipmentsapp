@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete '/log_out', to: 'sessions#destroy', as: :log_out
 
   resources :fleets
-  #get 'fleets/filderByCity/:id' => 'fleets#fleets_by_city', as: 'fleets_filter_by_city'
+  get 'fleets/filderByCity/:id' => 'fleets#fleets_by_city', as: 'fleets_filter_by_city'
 
   resources :bus
 

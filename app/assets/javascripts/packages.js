@@ -23,7 +23,8 @@ $(document).ready(function(){
     var data = {
       "package":{
         "raw_address" : formData[0].value,
-        "order_status_id": formData[1].value
+        "order_status_id": formData[1].value,
+        "bus_id": formData[2].value
       }
     };
     $.ajax({

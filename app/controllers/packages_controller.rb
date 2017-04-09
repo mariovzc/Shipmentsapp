@@ -8,6 +8,7 @@ class PackagesController < ApplicationController
 
   def show
     @order_statuss = OrderStatus.all
+    @buss = Bus.all
   end
 
   def new

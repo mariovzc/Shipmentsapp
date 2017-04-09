@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+    $('select').material_select();
     $( "#create_bus" ).submit(function( event ) {
         event.preventDefault();        
         var formData = JSON.parse(JSON.stringify(jQuery(this).serializeArray())); 

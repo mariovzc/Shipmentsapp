@@ -1,14 +1,21 @@
-<div class="row">
-<form  id="create_bus" class="col s12">
-  <div class="row">
-    <div class="input-field col s6">
-      <input id="license_plate" name="license_plate" type="text" class="validate">
-      <label for="first_name">Nombre del bus</label>
-    </div>
-    <div class="input-field col s6">
-      <%=select_tag "fleet_id" , options_from_collection_for_select(@fleets, "id", "name"), class: ''%>
-      <label>flota</label>
+
+<div id="create-bus-modal" class="modal">
+  <div class="modal-content">
+    <h4></h4>
+    <div class="row">
+      <form  id="create_bus" class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="license_plate" name="license_plate" type="text" class="validate">
+            <label for="first_name">Nombre del bus</label>
+          </div>
+          <div class="input-field col s6">
+            <%=select_tag "fleet_id" , options_from_collection_for_select(@fleets, "id", "name"), class: ''%>
+            <label>flota</label>
+          </div>
+        </div>
+          <input type="submit" class="btn btn-primary text-center" />
+      </form>
     </div>
   </div>
-    <input type="submit" class="btn btn-primary text-center" />
-</form>
+</div>

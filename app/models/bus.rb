@@ -1,5 +1,5 @@
 class Bus < ApplicationRecord
-  has_one :fleet
+  belongs_to :fleet
   has_many :packages
 
   validates :license_plate, presence: true

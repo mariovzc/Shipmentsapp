@@ -1,6 +1,6 @@
 class Fleet < ApplicationRecord
-  has_one :city
-  has_many :bus
+  belongs_to :city
+  has_many :buses
   
   validates :name, presence: true
 

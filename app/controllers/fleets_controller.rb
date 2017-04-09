@@ -41,7 +41,7 @@ class FleetsController < ApplicationController
   def destroy    
     @fleet = Fleet.find(params[:id])
     @fleet.destroy
-    render json: "ok".to_json, status: 202  
+    render json: "ok".to_json, status: 200  
   end
 
     private

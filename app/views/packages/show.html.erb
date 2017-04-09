@@ -1,0 +1,26 @@
+<h3 class="center-align">Editar</h3>
+<div class="row">  
+    <form class="col s12" id="update-package">
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="input-field col s4">
+                <input class="form-control" type="text" name="raw_address" id="raw_address" value="<%= @package.address %>" >
+                <label for="package_raw_address">Direccion Actual</label>
+            </div>
+        </div>
+        <input type="hidden" name="longitude" id="longitude" value="<%= @package.longitude %>">
+        <input type="hidden"  name="latitude" id="latitude" value="<%= @package.latitude %>">
+        <input type="hidden" name="id" value="<%= @package.id %>">
+        <div class="center-align">
+            <button id="update-package-button" class="btn waves-effect waves-light" type="submit" name="action">Actualizar</button
+        </div>
+    </form>        
+</div> <br><br><br>
+<div class="row" style="margin-top: 100px;">
+    <div class="col s2"></div>
+    <div class="col s4">
+        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@package.latitude},#{@package.longitude}&markers=#{@package.latitude},#{@package.longitude}&zoom=17&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "#{@package.description} on the map", class: "materialboxed" %>
+
+    </div>
+</div>

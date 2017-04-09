@@ -71,7 +71,7 @@
                     <td><%= package.order_status.name %></td>
                     <td><%= package.current_location %></td>
                     <td>
-                        <a id="delete_users_<%=package.id%>" class="btn-floating blue "><i class="material-icons">border_color</i>
+                        <%= link_to '<i class= "material-icons">explore</i>'.html_safe, (package),class: 'btn-floating blue' %>
                     </td>
                 </tr>
             <% end %>            

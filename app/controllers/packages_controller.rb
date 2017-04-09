@@ -68,6 +68,6 @@ class PackagesController < ApplicationController
     end
 
     def package_params
-      params.require(:package).permit(:user_id, :order_status_id, :bus_id, :current_lat, :current_lng, :description, :origin_id, :destination_id, :weight)
+      params.require(:package).permit(:user_id, :order_status_id, :bus_id, :longitude, :latitude, :description, :origin_id, :destination_id, :weight, :raw_address)
     end
 end

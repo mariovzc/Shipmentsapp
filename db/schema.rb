@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 9) do
 
   create_table "buses", force: :cascade do |t|
     t.string   "license_plate"
@@ -45,14 +45,15 @@ ActiveRecord::Schema.define(version: 7) do
     t.integer  "order_status_id"
     t.integer  "bus_id"
     t.string   "trackingid"
-    t.decimal  "current_lat",     precision: 10, scale: 6
-    t.decimal  "current_lng",     precision: 10, scale: 6
+    t.decimal  "latitude",        precision: 10, scale: 6
+    t.decimal  "longitude",       precision: 10, scale: 6
     t.text     "description"
     t.integer  "origin_id"
     t.integer  "destination_id"
     t.decimal  "weight"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.text     "address"
     t.index ["bus_id"], name: "index_packages_on_bus_id"
     t.index ["destination_id"], name: "index_packages_on_destination_id"
     t.index ["order_status_id"], name: "index_packages_on_order_status_id"

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('.materialboxed').materialbox();
   $("#document").keyup(function(){
       $.get("/user/document/" + $(this).val() +".json", function(data, status){
           if(data !== null){
@@ -13,6 +14,30 @@ $(document).ready(function(){
               $(".package-label").removeClass('active');
               $("#created").val(0);
           }
+    });
+  });
+
+  $( "#update-package" ).submit(function( event ) {
+    event.preventDefault();
+    var formData = JSON.parse(JSON.stringify(jQuery(this).serializeArray())); 
+    var data = {
+      "package":{
+        "raw_address" : formData[0].value
+      }
+    };
+    $.ajax({
+        type: "PUT",
+        url: "/packages/"+ formData[3].value +".json",
+        data: JSON.stringify(data),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data){
+          alert("Datos Actualizados");
+          location.reload();
+        },
+        failure: function(errMsg) {
+            alert(errMsg);
+        }
     });
   });
 });

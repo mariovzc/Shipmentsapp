@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'sorcery'
 gem 'validates_email_format_of'
 gem "responders"
+gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     $('.modal').modal();
+    $('select').material_select();  
     $( "#create_fleets" ).submit(function( event ) {
         event.preventDefault();        
         var formData = JSON.parse(JSON.stringify(jQuery(this).serializeArray())); 

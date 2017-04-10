@@ -21,7 +21,7 @@ class PackagesController < ApplicationController
   end
   def package_by_status
       status = params[:id]
-      if status == 0
+      if status.to_i == 0
         @packages = Package.all
       else
         @packages = Package.where(order_status_id: params[:id])

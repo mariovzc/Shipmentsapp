@@ -54,6 +54,17 @@
         </table>
     </div>
     <div id="test3" class="col s12">
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="col s5">
+                <select class="browser-default" id="filter-packages">
+                    <option value="0">Todos</option>
+                    <option value="1">En Bodega</option>
+                    <option value="2">En Transporte</option>
+                    <option value="3">Entregado</option>
+                </select>
+            </div>
+        </div>                
         <table class="highlight centered">
             <thead>
             <tr>
@@ -65,7 +76,7 @@
             </tr>
             </thead>
 
-            <tbody>
+            <tbody id="packages-table">
             <% @packages.each do |package| %>
                 <tr>
                     <td><%= package.trackingid %></td>

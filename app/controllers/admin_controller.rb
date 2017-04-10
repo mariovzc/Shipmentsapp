@@ -12,5 +12,6 @@ class AdminController < ApplicationController
     @buss = Bus.all
     @users = User.all
     @packages = Package.all
+    @status = OrderStatus.all
   end
 end

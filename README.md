@@ -26,8 +26,7 @@ Utilidades
 
 > - bundle exec rspec spec
 > - rake diagram:all_with_engines
-
-
+> - https://github.com/mariovzc/Shipmentsapp/tree/master/doc
 
 Contribuidores
 -------------

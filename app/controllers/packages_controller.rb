@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update, :destroy]
-  #skip_before_action :require_login, only:[:package_by_trackingid]
+  skip_before_action :require_login, only:[:package_by_trackingid, :new, :create, :destroy]
   def index
       @packages = Package.all
       render json: @packages

@@ -13,7 +13,7 @@
                 <span class="card-title grey-text text-darken-4">Informacion del paquete:<i class="material-icons right">close</i></span>
                 <p>Origen: <%=package.origin.name%></p>
                 <p>Destino: <%=package.destination.name%></p>
-                <p>Enviado por: <%= package.user.full_name%></p>
+                <p>Enviado por: <%= package.user.nil? ? ' Usuario ' : package.user.full_name%></p>
                 <p>Contenido: <%= package.description %></p>
             </div>
         </div>

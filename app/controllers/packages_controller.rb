@@ -19,6 +19,14 @@ class PackagesController < ApplicationController
   def package_by_trackingid
       @package = Package.where(trackingid: params[:id] , order_status_id: [1,2] )[0]
   end
+  def package_by_status
+      status = params[:id]
+      if status == 0
+        @packages = Package.all
+      else
+        @packages = Package.where(order_status_id: params[:id])
+      end      
+  end
 
 
   def edit    

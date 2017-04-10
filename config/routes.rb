@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   resources :packages
   get 'getPackageByTrackingID/:id' => 'packages#package_by_trackingid', as: 'getPackageByTrackingID'
+  get 'getPackagesByStatus/:id' => 'packages#package_by_status', as: 'getPackageByStatus'
 end

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col s2"></div>
+    <div class="input-field col s2">
+        <%= number_field_tag 'document', nil , class: "validate" %>
+        <label for="document">Documento</label>
+    </div>
+    <div class="input-field col s3">
+        <%= text_field_tag 'first_name', nil, class: "validate" %>
+        <label for="first_name" class="package-label">Nombre</label>
+    </div>
+    <div class="input-field col s3">
+        <%= text_field_tag 'last_name', nil, class: "validate" %>
+        <label for="first_name" class="package-label">Apellido</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col s2"></div>
+    <div class="col s3">
+        <label>Origen</label>
+        <%= f.select :origin_id, options_from_collection_for_select(@cities, "code", "name"),{}, { :class => 'browser-default'} %>
+    </div>
+    <div class="col s3">
+        <label>Destino</label>
+        <%= f.select :destination_id, options_from_collection_for_select(@cities, "code", "name"),{}, { :class => 'browser-default'} %>
+    </div>
+    <div class="input-field col s2">
+        <%= f.number_field :weight, class: "validate" %>
+        <%= f.label :weight, 'Peso (KG)' %>
+    </div>
+</div>
+<div class="row">
+    <div class="col s3"></div>
+    <div class="input-field col s5">
+        <%= f.text_area :description, class: "materialize-textarea", maxlength: 100  %>
+        <%= f.label :description ,'Contenido del paquete'%>
+    </div>
+</div>

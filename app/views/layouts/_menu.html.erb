@@ -1,0 +1,14 @@
+<nav>
+  <div class="nav-wrapper">
+    <%=link_to 'APP', root_path, class: 'brand-logo'%>
+    <ul id="nav-mobile" class="right ">
+     <% if current_user %>
+      <li><%= link_to 'Panel', admin_index_path, class: 'nav-link' %></li>
+      <li><%= link_to 'Log Out', log_out_path, method: :delete, class: 'nav-link' %></li>
+     <%else%>
+      <li><%= link_to 'Sign Up', sign_up_path, class: 'nav-link' %></li>
+      <li><%= link_to 'Log In', log_in_path, class: 'nav-link' %></li>
+     <% end %>
+  </div>
+</nav>
+

@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+p "El Seed ha comenzado!!!"
+
+p "El seed de ciudades !!!!!"
+City.create(code: 05001, name: "MEDELLIN")
+City.create(code: 11001, name: "BOGOTA")
+City.create(code: 76001, name: "CALI")
+City.create(code: 76364, name: "JAMUNDI")
+City.create(code: "08001".to_i, name: "BARRANQUILLA")
+City.create(code: "08078".to_i, name: "BARANOA")
+City.create(code: "08560".to_i, name: "PONEDERA")
+p "El seed de ciudades termino"
+
+p "seed de estados!!!!!!"
+OrderStatus.create(name:"En Bodega")
+OrderStatus.create(name:"En Transporte")
+OrderStatus.create(name:"Entregado")
+p "seed de estados terminado"
+p "El seed a termiado"

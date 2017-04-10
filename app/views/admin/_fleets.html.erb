@@ -1,0 +1,20 @@
+<div id="create-fleets-modal" class="modal">
+  <div class="modal-content">
+    <h4></h4>
+    <div class="row">
+      <form  id="create_fleets" class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="license_plate" name="name" type="text" class="name" required>
+            <label for="first_name">Nombre de la flota</label>
+          </div>
+          <div class="input-field col s6">
+            <%=select_tag "city_id", options_from_collection_for_select(@cities, "code", "name"), class: 'form-control'%>
+            <label>Ciudad</label>
+          </div>
+        </div>
+          <input type="submit" class="btn btn-primary text-center" />
+      </form>
+    </div>
+  </div>
+</div>

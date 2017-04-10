@@ -1,0 +1,18 @@
+<h3 class="center-align">Log In</h3>
+<div class="row">
+    <%= form_tag sessions_path, method: :post, :html => {:class => 'col s12'} do %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= email_field_tag :email, nil, class: 'form-control', required: true , class: "validate" %>
+          <%= label_tag :email %>
+        </div>
+        <div class="input-field col s6">
+          <%= password_field_tag :password, nil, class: 'form-control', required: true , class: "validate" %>
+          <%= label_tag :password %>
+        </div>
+      </div>
+      <div class="center-align">
+        <%= submit_tag 'Log In', class: 'waves-effect waves-light btn' %>
+      </div>
+    <% end %>
+  </div>

@@ -1,0 +1,9 @@
+<h1>Editar</h1>
+<div class="row">
+    <%= form_for @user, :html => {:class => 'col s12'} do |f| %>
+        <%= render 'form', f: f %>
+        <div class="center-align">
+            <%= f.submit 'Register', class: 'waves-effect waves-light btn' %>
+        </div>
+    <% end %>
+</div>

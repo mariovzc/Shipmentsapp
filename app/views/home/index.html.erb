@@ -1,0 +1,42 @@
+<br>
+<h3 class="center-align">Ver Paquete</h3>
+<div class="row">
+    <div class="col s3"></div>
+    <div class="col s6">
+        <nav>
+            <div class="nav-wrapper">
+                <form id= "search-package">
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <div id="package-info" class="row hide">
+            <div class="col s3"></div>
+            <div class="col s6 m6 ">
+                <div class="card-panel blue">
+                    <span class="white-text">
+                        <h6>Estado del pedido: <span id="trackingid"></span></h6>
+                        <ul>
+                            <li>Direccion Actual: <span id="address"></span> </li>
+                            <li>Estado: <span id="order_status"></span> </li>
+                            <li>Camion Asignado: <span id="bus"></span> </li>
+                            <input type="hidden" name="package-id"  id="package-id">
+                        </ul>
+                        <div class="center-align cancel-package-button">
+                            <a class="waves-effect waves-light btn" href="javascript:void(0);">Cancelar</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%= render  "packages" %>
+<div class="fixed-action-btn">
+    <%= link_to '<i class="large material-icons">add</i>'.html_safe, new_package_path, class: "btn-floating btn-large red pulse" %>
+</div>

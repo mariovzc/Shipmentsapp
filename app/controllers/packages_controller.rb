@@ -18,7 +18,6 @@ class PackagesController < ApplicationController
 
   def package_by_trackingid
       @package = Package.where(trackingid: params[:id] , order_status_id: [1,2] )[0]
-      render json: @package
   end
 
 

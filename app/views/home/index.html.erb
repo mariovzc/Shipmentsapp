@@ -17,14 +17,18 @@
         <div id="package-info" class="row hide">
             <div class="col s3"></div>
             <div class="col s6 m6 ">
-                <div class="card-panel teal">
+                <div class="card-panel blue">
                     <span class="white-text">
                         <h6>Estado del pedido: <span id="trackingid"></span></h6>
                         <ul>
                             <li>Direccion Actual: <span id="address"></span> </li>
                             <li>Estado: <span id="order_status"></span> </li>
                             <li>Camion Asignado: <span id="bus"></span> </li>
+                            <input type="hidden" name="package-id"  id="package-id">
                         </ul>
+                        <div class="center-align cancel-package-button">
+                            <a class="waves-effect waves-light btn" href="javascript:void(0);">Cancelar</a>
+                        </div>
                     </span>
                 </div>
             </div>

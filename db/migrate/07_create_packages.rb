@@ -10,8 +10,8 @@ class CreatePackages < ActiveRecord::Migration[5.0]
       t.decimal :current_lng, :precision=>10, :scale=>6
       t.text :description, required: true
 
-      t.references :origin, foreign_key: true
-      t.references :destination, foreign_key: true
+      t.references :origin 
+      t.references :destination
       t.decimal :weight
 
       t.timestamps

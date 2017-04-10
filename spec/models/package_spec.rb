@@ -5,12 +5,13 @@ subject { described_class.new(user_id: 1,
                               order_status_id: 1,
                               bus_id: 1,
                               trackingid: "doe",
-                              current_lat: 25.5,
-                              current_lng: 23.3,
+                              latitude: 25.5,
+                              longitude: 23.3,
                               description: "hello",
                               origin_id: 1,
                               destination_id: 1,
-                              weight: 20.5
+                              weight: 20.5,
+                              address:"asd"
                               ) }
   
   describe "Validations" do

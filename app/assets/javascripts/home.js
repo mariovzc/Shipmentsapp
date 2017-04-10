@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     $( "#search-package" ).submit(function( event ) {
         event.preventDefault();
-        $.get( "getPackageByTrackingID/" + $("#search").val() + ".json", function( data ) {
+        $.get( "/getPackageByTrackingID/" + $("#search").val() + ".json", function( data ) {
             if(data === null){
                 alert("Codigo no valido o ya entregado");
                 return;
@@ -20,7 +20,7 @@ $( document ).ready(function() {
     });
     $( ".cancel-package-button" ).click(function() {
         $.ajax({
-            url: 'packages/' + $('#package-id').val() + ".json",
+            url: '/packages/' + $('#package-id').val() + ".json",
             type: 'DELETE', //<-----this should have to be an object.
             contentType:'application/json',  // <---add this
             dataType: 'text',                // <---update this
